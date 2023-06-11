@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Iniciar sesión</h1>
+
+<form  th:action="@{/cliente/iniciar}" method="post">
+  <div>
+    <label >Correo:</label>
+    <input type="text" id="username" name="tipoIdentificacion" required>
+  </div>
+  <div>
+    <label >Contraseña:</label>
+    <input type="password" id="password" name="contrasena" required>
+  </div>
+  <div>
+    <button type="submit">Iniciar sesión</button>
+  </div>
+</form>
+</body>
+</html>

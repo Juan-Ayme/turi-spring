@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ayawasi</title>
+    <!-- Agrega el enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/BienvenidoImg/css/bienvenido-estilo.css">
+</head>
+<body th:object="${clientes}">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 columna-izquierda">
+            <a href="#" onclick="location.reload();"><img src="/BienvenidoImg/ayawasi-logo-negro.png" alt="Logo de la empresa"></a>
+            <ul class="list-unstyled">
+                <li><a href="#" class="btn btn-primary btn-block mb-2">Inicio</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mb-2">Boletos</a></li>
+                <li><a th:href="@{/cliente/reserva/{id}(id=${clientes.idCliente})}" onclick="location.reload();" class="btn btn-primary btn-block mb-2">Reservas</a></li>
+                <li><a href="#" class="btn btn-salir btn-block mb-2">Salir</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-6 columna-centro">
+            <div class="d-flex align-items-start">
+                <div>
+                    <h3 th:text="'Hola ' + ${clientes.persona.nombre}"></h3>
+                    <p>Bienvenido de nuevo y explora Ayacucho</p>
+                </div>
+                <div class="ml-auto">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Buscar destinos" aria-label="Buscar destinos" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4>Destinos</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores deserunt dolorem excepturi exercitationem expedita explicabo iste iusto labore nam nesciunt nulla obcaecati quisquam reiciendis, sit tenetur, veritatis vitae voluptatibus?</p>
+            <h4>Hoteles</h4>
+            <ul>
+                <li>Hotel 1</li>
+                <li>Hotel 2</li>
+                <li>Hotel 3</li>
+                <!-- Agrega más hoteles si es necesario -->
+            </ul>
+        </div>
+        <div class="col-sm-3 columna-derecha">
+            <div class="d-flex justify-content-between">
+                <!-- Coloca el contenido del calendario a la izquierda del avatar -->
+                <div class="text-center">
+                    <h4>Calendario</h4>
+                    <!-- Aquí puedes agregar el contenido del calendario -->
+                </div>
+                <!-- Coloca el avatar al lado derecho del calendario -->
+                <div class="avatar-container">
+                    <!-- Crea un div con la clase dropdown para el botón y el menú -->
+                    <div class="dropdown">
+                        <!-- Crea un botón con la clase dropdown-toggle y el atributo data-toggle="dropdown" para activar el menú -->
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="avatarButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- Añade una imagen con la clase avatar dentro del botón -->
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" alt="User avatar" class="avatar">
+                        </button>
+                        <!-- Crea un div con la clase dropdown-menu y el atributo aria-labelledby con el id del botón para asociar el menú al botón -->
+                        <div class="dropdown-menu" aria-labelledby="avatarButton">
+                            <!-- Añade los enlaces con la clase dropdown-item dentro del menú -->
+                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a class="dropdown-item" href="#">Configuración</a>
+                            <a class="dropdown-item" href="#">Cambiar cuenta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>Próximos eventos</h4>
+                <ul>
+                    <li>Evento 1</li>
+                    <li>Evento 2</li>
+                    <li>Evento 3</li>
+                    <!-- Agrega más eventos si es necesario -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Agrega el enlace al archivo JavaScript de Bootstrap (opcional) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

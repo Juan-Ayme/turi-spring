@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuevo Cliente</title>
+</head>
+<body>
+<h1>Nuevo Cliente</h1>
+
+<p><a th:href="@{/persona/new}">agregar persona</a></p>
+
+<form th:action="@{/cliente/guardar}" th:object="${cliente}" method="post">
+    <div>
+        <label >ID:</label>
+        <input type="number" id="idCliente" th:field="*{idCliente}">
+    </div>
+  <div>
+    <label >Apellido:</label>
+    <input type="text" id="apellido" th:field="*{apellido}" required>
+  </div>
+  <div>
+    <label >Tipo de Identificación:</label>
+    <input type="number" id="tipoIdentificacion" th:field="*{tipoIdentificacion}" required>
+  </div>
+  <div>
+    <label >Id Persona:</label>
+    <input type="text" id="idPersoa" th:field="*{persona.idPersona}" required>
+  </div>
+  <button type="submit">Guardar</button>
+</form>
+</body>
+</html>
